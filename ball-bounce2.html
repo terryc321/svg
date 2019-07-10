@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Canvas Resize</title>
+
+    <!--
+stack overflow 
+https://stackoverflow.com/questions/1664785/resize-html5-canvas-to-fit-window 
+-->
+    
+    <script type="text/javascript">
+
+var ballImage = new Image;
+var ballImageMask = new Image;
+
+
+var ballx = 0;
+var bally = 0;
+var ballWidth=100;
+var ballHeight=100;
+var ballColor = "green";
+var borderHgt = ballHeight;
+var borderWid = ballWidth;
+var dx = 5;
+var dy = 5;
+var nTick = 0;
+var canvas = null;
+
+ballx = Math.floor(borderWid / 2);
+bally = Math.floor(borderHgt / 2);
+
+
+function resize_canvas(){
+    canvas = document.getElementById("canvas");
+    if (canvas.width  < window.innerWidth)
+    {
+	canvas.width  = window.innerWidth;
+    }
+
+    if (canvas.height < window.innerHeight)
+    {
+	canvas.height = window.innerHeight;
+    }
+    
+    ballImage.src = "images/ball.jpg";
+    ballImageMask.src = "images/ball-mask.jpg";
+
+    /*
+    if (canvas.getContext) {
+
+	var ctx = canvas.getContext('2d');
+	ctx.fillStyle="blue";
+	ctx.fillRect(25,25,100,100);
+	ctx.clearRect(45,45,60,60);
+	ctx.strokeRect(50,50,50,50);
+	ctx.font = "30px Arial";
+	ctx.fillStyle = "green";
+	ctx.fillText("resized canvas to dx=" + canvas.width + " , dy = " + canvas.height, 10, 50);
+
+	var img = document.getElementById("scream");
+	//ctx.drawImage(img, 400, 10);
+	
+    }
+    //alert("resized canvas");
+    //document.getElementById("status").innerHTML ="resized canvas to dx=" + canvas.width + " , dy = " + canvas.height;
+    */
+}
+
+
+
+
+setInterval(myTick, 15);
+
+function myTick(){
+
+    if (canvas && canvas.getContext) {
+	var ctx = canvas.getContext('2d');
+	var cwid = canvas.width;
+	var chgt = canvas.height;
+	
+	
+	//ctx.fillStyle = "#000000";
+	//ctx.clearRect(ballx  ,bally, ballWidth,ballHeight);
+
+	if (ballImageMask){
+	    ctx.drawImage(ballImageMask, ballx, bally);
+	}
+	
+	
+	ballx = ballx + dx;
+	bally = bally + dy;
+
+	
+	
+	if (ballx > cwid - borderWid){
+	    ballx = cwid - borderWid;
+	    dx = -dx;
+	}
+
+	if (ballx < 0){
+	    ballx = 0;
+	    dx = -dx;
+	    
+	}
+
+	if (bally > chgt - borderHgt){
+	    bally = chgt - borderHgt;
+	    dy = -dy ;
+	    
+	}
+
+	
+	if (bally < 0){
+	    bally = 0;
+	    dy = -dy ;
+	    
+	}
+
+	
+	
+	//ctx.fillStyle = ballColor;
+	//ctx.fillRect(ballx,bally,ballWidth,ballHeight);
+
+	
+	if (ballImage && ballImageMask){
+	    ctx.fillStyle = "#FFFFFF";
+	    ctx.clearRect(5 , 5, 300, 50);
+	    ctx.fillText("ball x,y = " + ballx + "," + bally, 10,50);
+
+	    //ctx.fillStyle = "#FFFFFF";
+	    //ctx.clearRect(ballx, bally, ballImage.width, ballImage.height);
+	    ctx.drawImage(ballImage, ballx, bally);
+	    
+	}
+	
+	
+	document.getElementById("tock").innerHTML = nTick;
+	nTick ++;
+	
+    }
+}
+
+
+
+</script>
+    </head>
+
+    <body onload="resize_canvas()" onresize="resize_canvas()" style="background-color:blue">
+
+ <img id="ball" style="visibility:hidden" height="30" width="30" src="images/ball.jpg">
+ 
+    <div id="tock"></div>
+  <canvas id="canvas" style="background-color:red" width="100" height="100" onresize="resize_canvas">Your browser doesn't support canvas</canvas>
+  <div id="status"></div>
+
+  <img id="scream" style="visibility:hidden" height="30" width="30" src="images/scream.jpg">
+ 
+ 
+  <script>
+        document.getElementById("status").innerHTML = "hello world";
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,56 @@
+
+
+/*
+body {
+    margin: 0;
+    padding: 2em;
+    font-family: sans-serif;
+    background-color: red;
+    background-image: url('images/spade.svg'),
+    url('images/diamond.svg'),
+    url('images/club.svg');
+    background-size: 60px 40px;
+    background-position: 0 0, 80px 40px, 120px 40px;
+}
+
+
+
+ul {
+    background-color: white;
+    background-color: rgba(100%, 100%, 100%, 0.8);
+    max-width: 70%;
+    margin: auto;
+    padding: 1em;
+    padding-left: calc(1em + 10%);
+    border: solid #999 5%;
+    border-radius: 10%;
+    border-image-source:
+    border-image-slice:
+    border-image-width:
+    border-image-repeat:
+    url(svg-in-css-border-gradient.svg);
+    5% 5%;
+    4.7%; // 5% / 105% 
+    stretch;
+}
+
+li {
+    line-height: 2em;
+}
+ul li:nth-of-type(4n+1) {
+    list-style-image: url('images/spade.svg');
+}
+
+ul li:nth-of-type(4n+2) {
+    list-style-image: url('images/club.svg');
+}
+
+ul li:nth-of-type(4n+3) {
+    list-style-image: url('images/club.svg');
+}
+
+ul li:nth-of-type(4n+4) {
+    list-style-image: url('images/diamond.svg');
+}
+
+*/

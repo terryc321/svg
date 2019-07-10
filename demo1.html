@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SVG Images within HTML</title>
+    <style>
+      html, body {
+      background-color: lightYellow;
+      margin: 0; padding: 0;
+      min-height: 100%;
+      }
+      header {
+      height: 10em;
+      background: #444;
+      font-family: serif;
+      }
+      header h1 {
+      margin-top: 0;
+      color: red;
+      text-shadow: yellow 0 0 4px, orange 0 0 2px;
+      font-size: 400%;
+      }
+      header img {
+      height: 8em;
+      float: left;
+      margin: 1em 2em;
+      }
+      p { padding: 0.5em; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="traffic-lights4.svg" />
+      <h1>Tony’s Towing</h1>
+    </header>
+    <main>
+      <p>Main text goes here, but <em>WOW</em>
+	look at that image in the header!</p>
+    </main>
+  </body>
+</html>
+
+

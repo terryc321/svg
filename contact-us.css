@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/* Form styles */
+form {
+display: block;
+margin: 1em;
+padding: 1em;
+background: lightyellow;
+border: double navy thick;
+border-radius: 1em;
+overflow: auto;
+color: #002;
+}
+label {
+display: block;
+clear: right;
+padding: 0 0 1.5em;
+font-family: sans-serif;
+}
+input, button {
+display: block;
+float: right;
+min-width: 6em;
+max-width: 70%;
+border-width: 3px;
+padding: 0.2em;
+}
+input:invalid {
+border-color: red;
+box-shadow: none; /* override browser defaults */
+}
+abbr[title="Required"] {
+color: red;
+font-weight: bold;
+text-decoration: none;
+border: none;
+}
+form:invalid button[type="submit"] {
+color: gray;
+}
+/* SVG styles */
+form svg {
+float: left;
+width: 6em;
+height: 14em;
+max-width: 25%;
+max-height: 80vh;
+overflow: visible;
+padding: 1em; /* hack for browsers that don't */
+margin: -1em; /* support overflow on SVG */
+}
+.lit {
+/* Set the lights off to start */
+visibility: hidden;
+}
+form .yellow .lit {
+/* By default (if HTML 5 form validation is not supported)
+the yellow light will display */
+visibility: visible;
+}
+form:valid .green .lit {
+/* If the validator thinks all form elements are ok,
+the green light will display */
+visibility: visible;
+}
+form:invalid .red .lit {
+/* If the validator detects a problem in the form,
+the red light will display */
+visibility: visible;
+}
+form:valid .yellow .lit, form:invalid .yellow .lit {
+    /* If either validator class is recognized,
+turn off the yellow light */
+visibility: hidden;
+}
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="en"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     
+height="320px" width="400px" >
+  <title>Primary Color Stoplight</title>
+
+  <defs>
+<!-- definitions go here , used id property -->
+
+  </defs>
+
+  
+  <style>
+
+    .small { font: italic 13px sans-serif; }
+    .heavy { font: bold 30px sans-serif; }
+
+    /* Note that the color of the text is set with the    *
+     * fill property, the color property is for HTML only */
+    .Rrrrr { font: italic 40px serif; fill: red; }
+  
+  </style>
+  
+  
+<!-- drawing goes here -->
+<rect x="20" y="20" width="100" height="280"
+      fill="url(#metal)" stroke="black" stroke-width="3" />
+
+
+
+<text class="small" x="40" y="80"
+      stroke="darkOrange">SLOW</text>
+
+<text class="heavy" x="30" y="200"
+      stroke="blue">FAST</text>
+
+
+
+</svg>
+
+
+
+

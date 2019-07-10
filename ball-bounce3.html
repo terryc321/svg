@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Canvas Resize</title>
+    <link rel="stylesheet" href="ball-bounce3.css" />
+   
+    <script type="text/javascript">
+
+var nTick = 0;
+
+function go(){
+    //setInterval(myTick, 1);
+    setInterval(myTick, 10);
+
+    // some repeated background
+    document.body.background = "images/ball.jpg";
+    
+}
+
+function myTick(){
+	
+    document.getElementById("tock").innerHTML = nTick;
+    nTick ++;
+    var traffic = document.getElementById("trafficlights");
+    traffic.style="position:absolute; left:" + nTick + "px";
+
+    if (nTick > 1000){
+	nTick = 0;
+    }
+    //var x = traffic.style.x ;
+    //alert(x);
+}
+
+</script>
+    </head>
+
+    <body onload="go()" >
+
+
+
+    <!--
+<img id="ball" style="visibility:hidden" src="ball-bounce3.svg">
+    <canvas id="canvas" style="background-color:red" width="100" height="100" onresize="resize_canvas">Your browser doesn't support canvas</canvas>
+  <div id="status"></div>
+  <img id="scream" style="visibility:hidden" height="30" width="30" src="images/scream.jpg">
+<img id="ball" style="visibility:hidden" src="ball-bounce3.svg">
+    
+    -->
+
+    <br><div id="tock">tock=div</div>
+     <p> this is ok </p>
+   <img id="trafficlights" style="visibility:visible" src="ball-bounce3.svg">
+    
+
+  <script type="text/javascript">
+ go();
+</script>
+
+
+
+</body>
+</html>
+
+
+
